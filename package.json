@@ -1,22 +1,25 @@
 {
-  "name": "com.alexmalyutindev.unity-upm-template",
-  "displayName": "Unity UPM Template",
+  "name": "com.alexmalutindev.downsample-render",
+  "displayName": "Unity Down Sample Render for URP",
   "description": "",
-  "homepage": "https://github.com/alexmalyutindev/unity-upm-template",
-  "version": "1.0.0",
-  "unity": "2018.3",
+  "homepage": "https://github.com/alexmalyutindev/unity-downsample-render",
+  "version": "0.0.1",
+  "unity": "2020.3",
   "license": "MIT",
   "author": "Alex Malyutin <alex.malyutin.dev@gmail.com> (https://github.com/alexmalyutindev)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexmalyutindev/unity-upm-template.git"
+    "url": "git+https://github.com/alexmalyutindev/unity-downsample-render.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "com.unity.render-pipelines.core": ">=10.5.1",
+    "com.unity.render-pipelines.universal": ">=10.5.1"
+  },
   "samples":
   [
     {
       "displayName": "Demo",
-      "description": "Unity UPM Template Demo",
+      "description": "Unity Down Sample Render Demo",
       "path": "Samples~/Demo"
     }
   ]
