@@ -31,12 +31,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Move LICENSE and README into package
         run: |
-          mv LICENSE.md Assets/Package/LICENSE.md
-          mv README.md Assets/Package/README.md
+          mv -v LICENSE.md Assets/Package/
+          mv -v README.md Assets/Package/
           if [ -d Assets/Samples ]; then
-            mv Assets/Samples Assets/Package/Samples~;
+            mkdir -v Assets/Package/Samples~
+            mv -v Assets/Samples/* Assets/Package/Samples~/;
           fi
-#          git add . && git commit --amend --reuse-message=HEAD
+          git add .
+          git -c user.name="GitHub Actions" -c user.email="actions@github.com" \
+            commit --author="GitHub Actions <actions@github.com>" \
+            --amend --reuse-message=HEAD
       - name: Update [upm] branch and [latest] tag
         run: |
           git subtree split --prefix=Assets/Package --branch upm
